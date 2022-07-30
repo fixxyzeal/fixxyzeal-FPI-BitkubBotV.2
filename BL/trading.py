@@ -87,7 +87,7 @@ def Trading(name, targetprofit, targetlost, buyprice):
             diff = latestprice - orderRate
             print(f'ProfitCal = {profitcal} Different = {diff}')
             if(ordertype == 'SELL'):
-                if(diff <= targetprofit):
+                if(diff >= targetprofit):
                     # Cancel Order
                     CancelOrder(hashkey)
                     msg = f'Order {name} Was Cancel Sell'

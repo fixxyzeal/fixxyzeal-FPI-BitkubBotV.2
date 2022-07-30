@@ -56,6 +56,7 @@ def SendLineNotify(msg):
 
 def Trading(name, targetprofit, targetlost, buyprice):
     # Get Target Price,Trade
+
     profitcal = 0
     msg = ""
     targetname = 'THB_' + name
@@ -86,14 +87,14 @@ def Trading(name, targetprofit, targetlost, buyprice):
             diff = latestprice - orderRate
             print(f'ProfitCal = {profitcal} Different = {diff}')
             if(ordertype == 'SELL'):
-                if(diff >= targetprofit):
+                if(diff <= targetprofit):
                     # Cancel Order
                     CancelOrder(hashkey)
                     msg = f'Order {name} Was Cancel Sell'
                     print(msg)
                     SendLineNotify(msg)
             if(ordertype == 'BUY'):
-                if(diff <= targetlost):
+                if(diff >= targetlost):
                     # Cancel Order
                     CancelOrder(hashkey)
                     msg = f'Order {name} Was Cancel Buy'

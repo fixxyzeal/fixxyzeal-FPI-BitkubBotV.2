@@ -83,7 +83,7 @@ def Trading(name, targetprofit, targetlost, buyprice):
             orderRate = float(order['rate'])
             ordertype = order['side']
             profitcal = (orderRate*targetprofit) / 100
-            diff = orderRate - latestprice
+            diff = latestprice - orderRate
             print(f'ProfitCal = {profitcal} Different = {diff}')
             if(ordertype == 'SELL'):
                 if(diff >= targetprofit):

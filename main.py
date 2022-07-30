@@ -19,7 +19,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"msg": "BF Technology FastApi v1"}
+    return {"msg": "FPI-Bitkub Bot v2"}
 
 
 @app.get("/bottrade")

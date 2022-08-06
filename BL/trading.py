@@ -108,7 +108,7 @@ def Trading(name, targetprofit, targetlost, buyprice):
         print(msg)
         SendLineNotify(msg)
 
-    elif (not orders['result']):
+    elif (amt > 0):
         # Create SELL Order
         SellOrder(targetname, amt, profitcal)
         msg = f'Create Sell Order {name} with rate = {profitcal} balance = {balance}'

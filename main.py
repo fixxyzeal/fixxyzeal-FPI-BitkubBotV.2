@@ -22,6 +22,11 @@ async def root():
     return {"msg": "FPI-Bitkub Bot v2"}
 
 
+@app.get("/hc")
+async def root():
+    return {"msg": "Healthy"}
+
+
 @app.get("/bottrade")
 async def root():
     list = db.cryptobotconfig.find()
